@@ -1,0 +1,12 @@
+## Interface: 110107
+## Title: MPlusForm
+## Notes: Recent Mythic+ performance tracker powered by Details
+## Author: AlexGerlitz
+## Version: 0.1.0
+## SavedVariables: MPlusFormDB
+## OptionalDeps: Details
+
+Core.lua
+Storage.lua
+DetailsBridge.lua
+Tooltip.lua
