@@ -1,0 +1,10 @@
+MPlusForm 1.4.2-rc10.7
+======================
+
+- Added verified player tooltip summaries from server-approved snapshots.
+- Added safe Retail 12 tooltip integration with protected error isolation.
+- Added placeholder snapshot support for fresh installs.
+- Added post-run metadata capture for optional external sync processing.
+- Kept public tooltip data limited to approved snapshot profiles.
+- Removed external sync files from the CurseForge addon package.
+

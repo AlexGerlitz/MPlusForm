@@ -1,0 +1,35 @@
+MPlusForm
+=========
+
+MPlusForm is a Mythic+ post-run verification add-on.
+
+It displays server-approved recent-run stats for players:
+
+- verified recent keys
+- average DPS from verified runs
+- deaths per run
+- interrupts per run
+- confidence level
+
+MPlusForm is not a combat helper, rotation helper, bot, overlay, or automation
+tool. It does not cast spells, click buttons, press keys, control the character,
+read process memory, inject DLLs, or modify the World of Warcraft client.
+
+How it works
+------------
+
+The add-on records safe Mythic+ metadata through normal WoW Lua add-on APIs and
+standard SavedVariables. A separate optional Windows Sync tool can read the
+standard SavedVariables file and WoWCombatLog.txt from disk, send post-run
+evidence to a private MPlusForm server, and download a server-approved snapshot
+back into the add-on Data folder.
+
+The in-game tooltip reads only the server-approved snapshot. Local
+SavedVariables are treated as untrusted draft input.
+
+Important beta note
+-------------------
+
+This CurseForge package contains only the World of Warcraft add-on. The optional
+Windows Sync tool is distributed separately for beta testers.
+

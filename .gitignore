@@ -1,0 +1,22 @@
+# Local sync runtime and generated state
+sync/runtime/
+*.zip
+*.exe
+*.log
+*.tmp
+
+# Local configuration and secrets
+config.json
+*.key
+*.pem
+id_ed25519*
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Windows/user-local noise
+Thumbs.db
+Desktop.ini
+
