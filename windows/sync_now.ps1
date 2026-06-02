@@ -9,6 +9,7 @@ if (-not (Test-Path $Py)) { throw "Portable python not found: $Py" }
 if (-not (Test-Path $Script)) { throw "Sync script not found: $Script" }
 
 $cfg = Get-Content -Raw $Config | ConvertFrom-Json
+$server = ($cfg.server_url).TrimEnd('/')
 Write-Host "== MPlusForm sync now =="
 Write-Host "SavedVariables: $($cfg.saved_variables)"
 Write-Host "CombatLog:      $($cfg.combat_log_path)"
@@ -30,7 +31,7 @@ if (Test-Path $cfg.combat_log_path) {
 Write-Host ""
 Write-Host "== API stats =="
 try {
-  Invoke-RestMethod -Uri "http://127.0.0.1:8015/api/v1/stats" -TimeoutSec 8 | ConvertTo-Json -Depth 8
+  Invoke-RestMethod -Uri "$server/api/v1/stats" -TimeoutSec 8 | ConvertTo-Json -Depth 8
 } catch {
   Write-Host "stats failed: $($_.Exception.Message)"
 }

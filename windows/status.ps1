@@ -12,8 +12,10 @@ Get-ScheduledTask -TaskName $SyncTaskName -ErrorAction SilentlyContinue | Format
 Get-ScheduledTask -TaskName $TunnelTaskName -ErrorAction SilentlyContinue | Format-List TaskName,State,TaskPath
 
 Write-Host "== config =="
+$server = "http://127.0.0.1:8015"
 if (Test-Path $Config) {
   $cfg = Get-Content -Raw $Config | ConvertFrom-Json
+  $server = ($cfg.server_url).TrimEnd('/')
   Write-Host "server_url=$($cfg.server_url)"
   Write-Host "wow_path=$($cfg.wow_path)"
   Write-Host "saved_variables=$($cfg.saved_variables)"
@@ -40,7 +42,7 @@ if ((Test-Path $Py) -and (Test-Path $Script) -and (Test-Path $Config)) {
 
 Write-Host "== health =="
 try {
-  Invoke-RestMethod -Uri "http://127.0.0.1:8015/api/health" -TimeoutSec 5 | ConvertTo-Json -Depth 5
+  Invoke-RestMethod -Uri "$server/api/health" -TimeoutSec 5 | ConvertTo-Json -Depth 5
 } catch {
   Write-Host "health failed: $($_.Exception.Message)"
 }

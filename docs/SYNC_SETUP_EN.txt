@@ -1,0 +1,59 @@
+MPlusForm Sync Setup
+====================
+
+MPlusForm is distributed in two parts:
+
+1. The World of Warcraft addon, installed through CurseForge.
+2. The optional MPlusForm Sync desktop component, downloaded separately.
+
+The CurseForge package contains addon files only. It does not contain an EXE, DLL, background service, or external sync runtime.
+
+What Sync does
+--------------
+
+MPlusForm Sync reads normal WoW addon/log text files from disk:
+
+- WTF/Account/.../SavedVariables/MPlusForm.lua
+- Logs/WoWCombatLog.txt
+
+It submits post-run evidence to the configured MPlusForm API and downloads the server-approved tooltip snapshot back to:
+
+- Interface/AddOns/MPlusForm/Data/Snapshot.lua
+
+What Sync does not do
+---------------------
+
+- It does not automate gameplay.
+- It does not press keys or click UI.
+- It does not inject into the game client.
+- It does not read or write game memory.
+- It does not modify the CurseForge addon code after installation.
+- It does not require a per-user token in the no-token beta flow.
+
+Install order
+-------------
+
+1. Install MPlusForm from CurseForge.
+2. Start WoW once with MPlusForm enabled, then exit or reload UI.
+3. Extract the MPlusForm Sync Setup zip.
+4. Run INSTALL_MPLUSFORM_SYNC.cmd.
+5. Run STATUS_MPLUSFORM_SYNC.cmd if you want to verify the setup.
+
+Private tunnel mode
+-------------------
+
+The current private Windows test uses a hidden local SSH tunnel to reach the API at:
+
+http://127.0.0.1:8015
+
+This mode requires an SSH key/alias already configured on the user's machine. It is intended for controlled private testing only.
+
+Public HTTPS mode
+-----------------
+
+For public launch, run Sync with a public HTTPS API endpoint and no SSH tunnel task:
+
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\INSTALL_MPLUSFORM_SYNC.ps1 -NoTunnelTask -ServerUrl https://YOUR_API_HOST
+
+Do not distribute private SSH keys to users.
+

@@ -16,17 +16,40 @@ function Find-WoWPath {
   param([string]$Given)
   $candidates = @()
   if ($Given -ne "") { $candidates += $Given }
+
   $candidates += @(
     "G:\World of Warcraft",
+    "D:\World of Warcraft",
+    "E:\World of Warcraft",
     "C:\Program Files (x86)\World of Warcraft",
     "C:\Program Files\World of Warcraft",
     "$env:ProgramFiles\World of Warcraft",
     "${env:ProgramFiles(x86)}\World of Warcraft"
   )
-  foreach ($c in $candidates) {
-    if ($c -and (Test-Path (Join-Path $c "_retail_\Interface\AddOns"))) { return $c }
+
+  $driveRoots = @()
+  try {
+    $driveRoots = Get-CimInstance Win32_LogicalDisk -Filter "DriveType=3" | ForEach-Object { $_.DeviceID + "\" }
+  } catch {
+    $driveRoots = Get-PSDrive -PSProvider FileSystem | ForEach-Object { $_.Root }
   }
-  throw "World of Warcraft retail folder not found. Pass -WoWPath 'G:\World of Warcraft'."
+  foreach ($root in $driveRoots) {
+    if (-not $root) { continue }
+    $candidates += (Join-Path $root "World of Warcraft")
+    $candidates += (Join-Path $root "Games\World of Warcraft")
+    $candidates += (Join-Path $root "Battle.net\World of Warcraft")
+  }
+
+  $checked = @{}
+  foreach ($c in $candidates) {
+    if (-not $c) { continue }
+    $full = [System.IO.Path]::GetFullPath($c)
+    if ($checked.ContainsKey($full)) { continue }
+    $checked[$full] = $true
+    $toc = Join-Path $full "_retail_\Interface\AddOns\MPlusForm\MPlusForm.toc"
+    if (Test-Path $toc) { return $full }
+  }
+  throw "MPlusForm addon not found. Install MPlusForm from CurseForge first, start WoW once if needed, then run this setup again. If WoW is installed in a custom folder, pass -WoWPath 'X:\World of Warcraft'."
 }
 
 $PackageRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
@@ -44,8 +67,12 @@ $ConfigPath = Join-Path $ConfigDir "config.json"
 
 $Wow = Find-WoWPath -Given $WoWPath
 $Retail = Join-Path $Wow "_retail_"
+$AddonDir = Join-Path $Retail "Interface\AddOns\MPlusForm"
+$AddonToc = Join-Path $AddonDir "MPlusForm.toc"
+if (-not (Test-Path $AddonToc)) { throw "MPlusForm addon is missing: $AddonToc" }
+
 $SavedRoot = Join-Path $Retail "WTF\Account"
-$SavedFile = Get-ChildItem -Path $SavedRoot -Recurse -Filter "MPlusForm.lua" -ErrorAction SilentlyContinue | Select-Object -First 1
+$SavedFile = Get-ChildItem -Path $SavedRoot -Recurse -Filter "MPlusForm.lua" -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 1
 if ($null -eq $SavedFile) {
   $AccountDir = Get-ChildItem -Path $SavedRoot -Directory -ErrorAction SilentlyContinue | Select-Object -First 1
   if ($null -eq $AccountDir) { throw "No WTF Account folder found. Start WoW once with MPlusForm enabled, then run installer again." }
@@ -57,9 +84,13 @@ if ($null -eq $SavedFile) {
   $SavedVariablesPath = $SavedFile.FullName
 }
 
-$AddonDataDir = Join-Path $Retail "Interface\AddOns\MPlusForm\Data"
+$AddonDataDir = Join-Path $AddonDir "Data"
 $CombatLogPath = Join-Path $Retail "Logs\WoWCombatLog.txt"
 New-Item -ItemType Directory -Force -Path $AppDir,$ConfigDir,$LogDir,$AddonDataDir,(Split-Path -Parent $CombatLogPath) | Out-Null
+$SnapshotPath = Join-Path $AddonDataDir "Snapshot.lua"
+if (-not (Test-Path $SnapshotPath)) {
+  "MPlusForm_Snapshot = { generatedAt = 0, profiles = {} }" | Set-Content -Encoding UTF8 $SnapshotPath
+}
 if (Test-Path $RuntimeDest) { Remove-Item -Recurse -Force $RuntimeDest }
 New-Item -ItemType Directory -Force -Path (Split-Path -Parent $RuntimeDest) | Out-Null
 Copy-Item -Recurse -Force $RuntimeSource $RuntimeDest
