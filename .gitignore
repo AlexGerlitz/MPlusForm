@@ -4,6 +4,9 @@ sync/runtime/
 *.exe
 *.log
 *.tmp
+!artifacts/**/*.zip
+!artifacts/**/*.exe
+!artifacts/**/*.sha256
 
 # Local configuration and secrets
 config.json
@@ -19,4 +22,3 @@ __pycache__/
 # Windows/user-local noise
 Thumbs.db
 Desktop.ini
-
