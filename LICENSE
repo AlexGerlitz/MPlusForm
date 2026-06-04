@@ -1,13 +1,21 @@
-All Rights Reserved
+MIT License
 
-Copyright (c) 2026 Alex Gerlitz. All rights reserved.
+Copyright (c) 2026 Alex Gerlitz
 
-MPlusForm, including its source code, documentation, server components, sync components, addon code, data formats, branding, and related materials, is proprietary software owned by Alex Gerlitz unless otherwise stated in writing.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-No permission is granted to copy, modify, merge, publish, distribute, sublicense, sell, host, operate, reverse engineer, or create derivative works based on this software, in whole or in part, without prior written permission from the copyright owner.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-Downloading or using an official release of the World of Warcraft addon is permitted only for personal gameplay use as distributed through approved release channels. This permission does not grant ownership, redistribution rights, sublicensing rights, commercial rights, or rights to reuse the source code or server components.
-
-All trademarks, service marks, and project names are the property of their respective owners. World of Warcraft and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. MPlusForm is not affiliated with or endorsed by Blizzard Entertainment.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, SECURITY, OR AVAILABILITY. TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE COPYRIGHT OWNER SHALL NOT BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM THE SOFTWARE OR ITS USE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
