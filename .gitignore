@@ -4,21 +4,44 @@ sync/runtime/
 *.exe
 *.log
 *.tmp
+*.pid
+*.lock
+state.json
+*.state.json
+*.jsonl
+
+# Release artifacts are allowed only under artifacts/
 !artifacts/**/*.zip
 !artifacts/**/*.exe
 !artifacts/**/*.sha256
 
 # Local configuration and secrets
 config.json
+*.config.json
+*.local.json
+*.secret
+*.secrets
 *.key
 *.pem
+*.p12
+*.pfx
 id_ed25519*
+id_rsa*
 .env
+.env.*
+!.env.example
 
 # Python cache
 __pycache__/
 *.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
 # Windows/user-local noise
 Thumbs.db
 Desktop.ini
+$RECYCLE.BIN/
+
+# macOS noise
+.DS_Store
