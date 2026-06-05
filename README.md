@@ -1,29 +1,108 @@
 # MPlusForm
 
-MPlusForm is a World of Warcraft addon and optional desktop sync pipeline for verified Mythic+ post-run player summaries.
+MPlusForm is an open-source World of Warcraft addon and optional desktop sync pipeline for verified Mythic+ post-run player summaries.
 
-The in-game addon displays only server-approved snapshot data in player tooltips. SavedVariables and local combat logs are treated as untrusted input until the server validates and approves a run.
+The addon displays only server-approved snapshot data in player tooltips. Local SavedVariables and combat-log files are treated as untrusted input until the server validates and approves a run.
 
-## Current Release
+## Current release
 
 - Version: `1.4.2-rc10.7`
 - Game: World of Warcraft Retail `12.0.5`
 - CurseForge addon package: addon files only, no executable sync component
-- Optional Windows sync: background Task Scheduler sync with local SSH tunnel support
+- Optional Windows sync: background Task Scheduler sync with local tunnel/development support
+- License: Apache-2.0 for source code, with project branding reserved separately
 
-## Repository Layout
+## Why MPlusForm exists
 
-- `MPlusForm.lua`, `MPlusForm.toc`, `Data/Snapshot.lua`: current addon package contents.
-- `sync/`: optional desktop sync source.
-- `windows/`: Windows installer and status scripts.
-- `server_patch/`: server-side trust layer/reference integration files.
-- `docs/`: CurseForge-facing English text.
+Mythic+ groups often need quick context about a player's recent performance, but local addon data can be edited. MPlusForm uses a conservative trust model:
 
-## Safety Model
+1. The addon records normal post-run metadata and renders approved public snapshots.
+2. The optional sync client reads normal addon SavedVariables and WoW combat-log text files from disk.
+3. The server validates submitted evidence.
+4. Only server-approved snapshot profiles are shown in-game.
 
-MPlusForm does not automate gameplay, inject into the game client, read game memory, press keys, or interact with protected game APIs. The addon writes normal SavedVariables and renders approved snapshot data in tooltips. The optional sync reads addon/log text files from disk and sends run evidence to the MPlusForm server for validation.
+MPlusForm is not a replacement for Raider.IO, Details, Warcraft Logs, or Blizzard's own systems. It is a small, transparent, open-source layer for verified post-run summaries in tooltips.
+
+## Safety model
+
+MPlusForm does **not**:
+
+- automate gameplay;
+- press keys or move the mouse;
+- use input hooks;
+- read World of Warcraft process memory;
+- inject into the game client;
+- modify the game client;
+- interact with protected gameplay APIs;
+- include an executable sync component in the CurseForge addon package.
+
+The optional sync client only reads documented local text files used by the addon pipeline, submits run evidence to the configured MPlusForm API, and downloads server-approved public snapshot files back into the addon `Data` folder.
+
+## Repository layout
+
+- `MPlusForm.lua`, `MPlusForm.toc`, `Data/Snapshot.lua` - addon package contents.
+- `sync/` - optional desktop sync client source.
+- `windows/` - Windows helper scripts for installing and operating sync.
+- `server_patch/` - reference server-side trust-layer integration files.
+- `docs/` - install, trust-model, privacy, troubleshooting, and release documentation.
+- `OPENAI_OSS_APPLICATION.md` - prepared open-source project application text.
+
+## Installing the addon
+
+Install MPlusForm from the official CurseForge project page or from a GitHub release package that contains only addon files.
+
+After installing, load into World of Warcraft and run:
+
+```text
+/mpf status
+```
+
+The addon should report its version, capture mode, queue status, and snapshot status.
+
+## Optional sync
+
+The desktop sync component is optional. It is used when a player wants to submit post-run evidence for server approval and receive updated verified snapshot data.
+
+Read:
+
+- `docs/INSTALL_SYNC.md`
+- `docs/TRUST_MODEL.md`
+- `docs/UNINSTALL_SYNC.md`
+- `docs/TROUBLESHOOTING.md`
+
+Public releases should use a documented HTTPS API endpoint. Local SSH tunnel support is a development/private-beta convenience and should not be presented as the normal public installation path.
+
+## Development
+
+This project currently includes Lua addon code, Python sync-client code, PowerShell Windows helper scripts, and reference server integration files.
+
+General development rules:
+
+- Do not commit secrets, private keys, `.env`, local config, logs, runtime zips, or generated executables.
+- Keep the CurseForge addon package free of executable sync files.
+- Keep public wording focused on transparent run verification, not anti-cheat claims.
+- Treat all client-side files as untrusted until server validation.
+- Prefer small, reviewable pull requests.
+
+## Contributing
+
+Contributions are welcome. Start with `CONTRIBUTING.md`, `SECURITY.md`, `PRIVACY.md`, and `docs/TRUST_MODEL.md`.
+
+Good first contribution areas:
+
+- documentation improvements;
+- installer diagnostics;
+- sync troubleshooting;
+- tests for combat-log parsing;
+- safer error messages;
+- release checklist improvements.
+
+## Branding and trademarks
+
+The source code is licensed under Apache-2.0. The MPlusForm name, logo, and branding are not licensed for confusing or misleading reuse. See `TRADEMARKS.md`.
 
 ## License
 
-All Rights Reserved. See `LICENSE`.
+Copyright 2026 Alex Gerlitz.
 
+Licensed under the Apache License, Version 2.0. See `LICENSE` and `NOTICE`.
