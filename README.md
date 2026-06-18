@@ -4,6 +4,30 @@ MPlusForm is an open-source World of Warcraft addon and optional desktop sync pi
 
 The addon displays only server-approved snapshot data in player tooltips. Local SavedVariables and combat-log files are treated as untrusted input until the server validates and approves a run.
 
+## 60-Second Reviewer Snapshot
+
+This repository is public proof for trust-model, validation-boundary, desktop automation, and
+operational documentation work.
+
+The game domain is not the main engineering signal. The useful signal is the shape of the system:
+untrusted local files, optional client sync, server-side validation, approved public snapshots,
+Windows install/operate scripts, and clear user-facing docs.
+
+| What to check | Why it matters |
+| --- | --- |
+| [Trust model](docs/TRUST_MODEL.md) | Shows how untrusted local evidence is separated from approved public snapshots. |
+| [Sync client](sync/mplusform_sync_service.py) | Shows the Python boundary for local file reading, API submission, and snapshot download. |
+| [Windows operations](windows/README.md) | Shows install/status/sync/uninstall workflows for a non-developer environment. |
+| [Server trust layer](server_patch/mplusform_trust_layer.py) | Shows the reference validation boundary on the server side. |
+| [Troubleshooting](docs/TROUBLESHOOTING.md) | Shows operational handoff and failure-mode documentation. |
+
+Best-fit evidence:
+
+- validation ownership: untrusted client files stay separate from server-approved data;
+- automation ownership: optional Python sync plus Windows Task Scheduler scripts;
+- packaging discipline: addon package and optional sync component are documented separately;
+- documentation ownership: install, uninstall, trust model, privacy, and troubleshooting docs.
+
 ## Current release
 
 - Version: `1.4.2-rc10.7`
