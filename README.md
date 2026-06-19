@@ -1,6 +1,7 @@
 # MPlusForm
 
-MPlusForm is an open-source World of Warcraft addon and optional desktop sync pipeline for verified Mythic+ post-run player summaries.
+MPlusForm is a validation-boundary and desktop-automation proof project packaged as an open-source
+World of Warcraft addon plus an optional sync pipeline for verified Mythic+ post-run summaries.
 
 The addon displays only server-approved snapshot data in player tooltips. Local SavedVariables and combat-log files are treated as untrusted input until the server validates and approves a run.
 

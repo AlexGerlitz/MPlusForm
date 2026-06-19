@@ -1,5 +1,5 @@
 param(
-  [string]$SshAlias = "mplus-moscow",
+  [string]$SshAlias = "mplus-api-host",
   [int]$LocalPort = 8015
 )
 

@@ -1,7 +1,7 @@
 param(
   [string]$WoWPath = "",
   [string]$ServerUrl = "http://127.0.0.1:8015",
-  [string]$SshAlias = "mplus-moscow",
+  [string]$SshAlias = "mplus-api-host",
   [switch]$SkipTunnelTask,
   [switch]$NoStart
 )

@@ -1,5 +1,7 @@
-# Local sync runtime and generated state
+# Local sync runtime, generated state, and distribution artifacts
 sync/runtime/
+artifacts/
+handoff/
 *.zip
 *.exe
 *.log
@@ -9,11 +11,6 @@ sync/runtime/
 state.json
 *.state.json
 *.jsonl
-
-# Release artifacts are allowed only under artifacts/
-!artifacts/**/*.zip
-!artifacts/**/*.exe
-!artifacts/**/*.sha256
 
 # Local configuration and secrets
 config.json
