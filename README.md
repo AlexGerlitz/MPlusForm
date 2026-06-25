@@ -9,6 +9,10 @@ post-run summaries. The engineering signal is the trust boundary, not the domain
 
 The addon displays only server-approved snapshot data in player tooltips. Local SavedVariables and combat-log files are treated as untrusted input until the server validates and approves a run.
 
+Profile / contact route: [DriveDesk AI Operator proof route](https://alexgerlitz.github.io/AlexGerlitz/drivedesk-proof-route.html),
+[portfolio](https://alexgerlitz.github.io/AlexGerlitz/), and
+[inbound brief](https://alexgerlitz.github.io/AlexGerlitz/INTAKE_BRIEF.md).
+
 ## 60-Second Reviewer Snapshot
 
 This repository is public proof for trust-model, validation-boundary, desktop automation, and
