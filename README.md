@@ -4,9 +4,8 @@ MPlusForm is a validation-boundary and desktop-automation proof project: untrust
 an optional Python sync pipeline, server-side approval, generated public snapshots, Windows
 operations scripts, and clear trust-model documentation.
 
-The current domain package is an open-source World of Warcraft addon plus optional sync pipeline
-for verified Mythic+ post-run summaries. The engineering signal is the trust boundary, not the
-game domain.
+The current domain package is a Lua addon plus optional Python sync pipeline for verified
+post-run summaries. The engineering signal is the trust boundary, not the domain-specific UI.
 
 The addon displays only server-approved snapshot data in player tooltips. Local SavedVariables and combat-log files are treated as untrusted input until the server validates and approves a run.
 
@@ -15,9 +14,9 @@ The addon displays only server-approved snapshot data in player tooltips. Local 
 This repository is public proof for trust-model, validation-boundary, desktop automation, and
 operational documentation work.
 
-The game domain is not the main engineering signal. The useful signal is the shape of the system:
-untrusted local files, optional client sync, server-side validation, approved public snapshots,
-Windows install/operate scripts, and clear user-facing docs.
+The domain-specific UI is not the main engineering signal. The useful signal is the shape of the
+system: untrusted local files, optional client sync, server-side validation, approved public
+snapshots, Windows install/operate scripts, and clear user-facing docs.
 
 | What to check | Why it matters |
 | --- | --- |
