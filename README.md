@@ -1,7 +1,12 @@
 # MPlusForm
 
-MPlusForm is a validation-boundary and desktop-automation proof project packaged as an open-source
-World of Warcraft addon plus an optional sync pipeline for verified Mythic+ post-run summaries.
+MPlusForm is a validation-boundary and desktop-automation proof project: untrusted local files,
+an optional Python sync pipeline, server-side approval, generated public snapshots, Windows
+operations scripts, and clear trust-model documentation.
+
+The current domain package is an open-source World of Warcraft addon plus optional sync pipeline
+for verified Mythic+ post-run summaries. The engineering signal is the trust boundary, not the
+game domain.
 
 The addon displays only server-approved snapshot data in player tooltips. Local SavedVariables and combat-log files are treated as untrusted input until the server validates and approves a run.
 
