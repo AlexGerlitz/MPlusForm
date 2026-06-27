@@ -14,7 +14,8 @@ The addon displays only server-approved snapshot data in player tooltips. Local 
 Profile / contact route: [DriveDesk AI Operator proof route](https://alexgerlitz.github.io/AlexGerlitz/drivedesk-proof-route.html),
 [LinkedIn message route](https://www.linkedin.com/in/alex-gerlitz-a659ab3bb/),
 [PDF resume](https://alexgerlitz.github.io/AlexGerlitz/output/pdf/alex-gerlitz-remote-ai-automation-resume.pdf),
-[portfolio](https://alexgerlitz.github.io/AlexGerlitz/), and
+[portfolio](https://alexgerlitz.github.io/AlexGerlitz/),
+[enterprise readiness](https://alexgerlitz.github.io/AlexGerlitz/enterprise-readiness.html), and
 [inbound brief](https://alexgerlitz.github.io/AlexGerlitz/intake-brief.html).
 
 ## 60-Second Reviewer Snapshot
