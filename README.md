@@ -2,14 +2,23 @@
 
 [![Public Verification](https://github.com/AlexGerlitz/MPlusForm/actions/workflows/public-verification.yml/badge.svg?branch=main)](https://github.com/AlexGerlitz/MPlusForm/actions/workflows/public-verification.yml)
 
-MPlusForm is a validation-boundary and desktop-automation proof project: untrusted local files,
-an optional Python sync pipeline, server-side approval, generated public snapshots, Windows
-operations scripts, and clear trust-model documentation.
+MPlusForm is a validation-boundary and desktop-automation proof project for messy
+local evidence: untrusted files, optional Python sync, server-side approval,
+generated public snapshots, Windows operations scripts, and clear trust-model
+documentation.
 
-The current domain package is a Lua addon plus optional Python sync pipeline for verified
-post-run summaries. The engineering signal is the trust boundary, not the domain-specific UI.
+The transferable engineering signal is the system boundary, not the domain-specific
+UI: local client data is treated as untrusted until a server validates it, approves
+it, and publishes a safe snapshot for the client to display.
 
-The addon displays only server-approved snapshot data in player tooltips. Local SavedVariables and combat-log files are treated as untrusted input until the server validates and approves a run.
+Role-fit signal: desktop automation, Python sync tooling, Windows operator scripts,
+server validation, public-safe data snapshots, documentation for non-developer
+users, and a public verification gate that checks the release contract.
+
+Current domain package: a Lua addon plus optional Python sync pipeline for verified
+post-run summaries. The addon displays only server-approved snapshot data in player
+tooltips. Local SavedVariables and combat-log files are treated as untrusted input
+until the server validates and approves a run.
 
 Profile / contact route: [DriveDesk AI Operator proof route](https://alexgerlitz.github.io/AlexGerlitz/drivedesk-proof-route.html),
 [LinkedIn message route](https://www.linkedin.com/in/alex-gerlitz-a659ab3bb/),
@@ -26,6 +35,11 @@ operational documentation work.
 The domain-specific UI is not the main engineering signal. The useful signal is the shape of the
 system: untrusted local files, optional client sync, server-side validation, approved public
 snapshots, Windows install/operate scripts, and clear user-facing docs.
+
+Hiring relevance: I can take a fragile local workflow, define what data cannot be
+trusted, build a sync/validation boundary, package it for Windows users, and leave
+verification, privacy, troubleshooting, install, uninstall, and operator handoff
+docs behind.
 
 | What to check | Why it matters |
 | --- | --- |
