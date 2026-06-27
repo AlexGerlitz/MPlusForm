@@ -1,5 +1,7 @@
 # MPlusForm
 
+[![Public Verification](https://github.com/AlexGerlitz/MPlusForm/actions/workflows/public-verification.yml/badge.svg?branch=main)](https://github.com/AlexGerlitz/MPlusForm/actions/workflows/public-verification.yml)
+
 MPlusForm is a validation-boundary and desktop-automation proof project: untrusted local files,
 an optional Python sync pipeline, server-side approval, generated public snapshots, Windows
 operations scripts, and clear trust-model documentation.
@@ -29,6 +31,7 @@ snapshots, Windows install/operate scripts, and clear user-facing docs.
 | [Windows operations](windows/README.md) | Shows install/status/sync/uninstall workflows for a non-developer environment. |
 | [Server trust layer](server_patch/mplusform_trust_layer.py) | Shows the reference validation boundary on the server side. |
 | [Troubleshooting](docs/TROUBLESHOOTING.md) | Shows operational handoff and failure-mode documentation. |
+| [Public verification gate](scripts/verify_public.sh) | Checks the public package contract, Python syntax, Lua syntax when available, and required proof docs. |
 
 Best-fit evidence:
 
