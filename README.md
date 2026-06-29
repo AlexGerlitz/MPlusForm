@@ -20,12 +20,17 @@ post-run summaries. The addon displays only server-approved snapshot data in pla
 tooltips. Local SavedVariables and combat-log files are treated as untrusted input
 until the server validates and approves a run.
 
-Profile / contact route: [DriveDesk AI Operator proof route](https://alexgerlitz.github.io/AlexGerlitz/drivedesk-proof-route.html),
+Profile / contact route: [LinkedIn Recruiter Packet](https://alexgerlitz.github.io/AlexGerlitz/linkedin-recruiter-packet.html),
+[DriveDesk AI Operator proof route](https://alexgerlitz.github.io/AlexGerlitz/drivedesk-proof-route.html),
+[Decision-Ready Contact](https://alexgerlitz.github.io/AlexGerlitz/decision-ready-contact.html),
 [LinkedIn message route](https://www.linkedin.com/in/alex-gerlitz-a659ab3bb/),
 [PDF resume](https://alexgerlitz.github.io/AlexGerlitz/output/pdf/alex-gerlitz-remote-ai-automation-resume.pdf),
 [portfolio](https://alexgerlitz.github.io/AlexGerlitz/),
 [enterprise readiness](https://alexgerlitz.github.io/AlexGerlitz/enterprise-readiness.html), and
 [inbound brief](https://alexgerlitz.github.io/AlexGerlitz/intake-brief.html).
+
+Shortest proof path: LinkedIn Recruiter Packet -> DriveDesk AI Operator proof route ->
+Decision-Ready Contact -> PDF resume.
 
 ## 60-Second Reviewer Snapshot
 
