@@ -24,7 +24,7 @@ Profile / contact route: [LinkedIn Recruiter Packet](https://alexgerlitz.github.
 [DriveDesk AI Operator proof route](https://alexgerlitz.github.io/AlexGerlitz/drivedesk-proof-route.html),
 [Decision-Ready Contact](https://alexgerlitz.github.io/AlexGerlitz/decision-ready-contact.html),
 [LinkedIn message route](https://www.linkedin.com/in/alex-gerlitz-a659ab3bb/),
-[PDF resume](https://alexgerlitz.github.io/AlexGerlitz/output/pdf/alex-gerlitz-remote-ai-automation-resume.pdf),
+[PDF resume](https://alexgerlitz.github.io/AlexGerlitz/output/pdf/alex-gerlitz-python-backend-automation-resume.pdf),
 [portfolio](https://alexgerlitz.github.io/AlexGerlitz/),
 [enterprise readiness](https://alexgerlitz.github.io/AlexGerlitz/enterprise-readiness.html), and
 [inbound brief](https://alexgerlitz.github.io/AlexGerlitz/intake-brief.html).
